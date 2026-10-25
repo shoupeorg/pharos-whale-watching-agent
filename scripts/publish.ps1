@@ -7,7 +7,9 @@ git -c safe.directory=$SafeProject add -A
 git -c safe.directory=$SafeProject diff --cached --quiet
 if ($LASTEXITCODE -ne 0) { git -c safe.directory=$SafeProject commit -m 'Build Pharos Whale-Watching Agent' }
 $Remote = 'https://github.com/shoupeorg/pharos-whale-watching-agent.git'
-if (-not (git -c safe.directory=$SafeProject remote get-url origin 2>$null)) { git -c safe.directory=$SafeProject remote add origin $Remote }
+$Remotes = @(git -c safe.directory=$SafeProject remote)
+if ($Remotes -notcontains 'origin') { git -c safe.directory=$SafeProject remote add origin $Remote }
+else { git -c safe.directory=$SafeProject remote set-url origin $Remote }
 git -c safe.directory=$SafeProject push -u origin main
 $Local = (git -c safe.directory=$SafeProject rev-parse HEAD).Trim()
 git -c safe.directory=$SafeProject fetch origin main
