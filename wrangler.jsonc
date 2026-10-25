@@ -1,17 +1,34 @@
-{
-  "name": "pharos-whale-watching-agent",
-  "main": "worker.js",
-  "compatibility_date": "2026-10-25",
-  "compatibility_flags": ["nodejs_compat"],
-  "workers_dev": true,
-  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*"] },
-  "d1_databases": [{ "binding": "DB", "database_name": "pharos-whale-watching-agent", "database_id": "REPLACE_AFTER_CREATE", "migrations_dir": "migrations" }],
-  "vars": {
-    "RPC_URL": "https://rpc.pharos.xyz",
-    "CHAIN_ID": "1672",
-    "ENGINE_VERSION": "whale-watch/1.0.0",
-    "CONFIRMATIONS": "12",
-    "MAX_BLOCKS_PER_SCAN": "500"
-  },
-  "observability": { "enabled": true }
+﻿{
+    "name":  "pharos-whale-watching-agent",
+    "main":  "worker.js",
+    "compatibility_date":  "2026-10-25",
+    "compatibility_flags":  [
+                                "nodejs_compat"
+                            ],
+    "workers_dev":  true,
+    "assets":  {
+                   "directory":  "./public",
+                   "binding":  "ASSETS",
+                   "run_worker_first":  [
+                                            "/api/*"
+                                        ]
+               },
+    "d1_databases":  [
+                         {
+                             "binding":  "DB",
+                             "database_name":  "pharos-whale-watching-agent",
+                             "database_id":  "84c75c25-058e-41cc-90bd-8d48ce53dec0",
+                             "migrations_dir":  "migrations"
+                         }
+                     ],
+    "vars":  {
+                 "RPC_URL":  "https://rpc.pharos.xyz",
+                 "CHAIN_ID":  "1672",
+                 "ENGINE_VERSION":  "whale-watch/1.0.0",
+                 "CONFIRMATIONS":  "12",
+                 "MAX_BLOCKS_PER_SCAN":  "500"
+             },
+    "observability":  {
+                          "enabled":  true
+                      }
 }
