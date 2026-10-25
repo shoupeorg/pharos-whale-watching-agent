@@ -16,7 +16,13 @@ Updated: 2026-10-25
 
 ## Remaining
 
-- Initialize Git, publish public repository, create/reuse D1, migrate, deploy and visually verify production.
+- Create the authorized public GitHub repository, push the completed commit, create/reuse D1, migrate, deploy and visually verify production.
+
+## External blockers
+
+- GitHub CLI is not installed and the repository does not yet exist; sandbox Git cannot open the interactive Credential Manager prompt.
+- The saved Wrangler OAuth token is expired and cannot refresh in the non-interactive sandbox.
+- Browser automation stopped because it could not determine the active browser URL confidently; no unsafe fallback was attempted.
 
 ## Safety
 

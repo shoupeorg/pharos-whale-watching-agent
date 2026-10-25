@@ -1,6 +1,11 @@
 import { readFile } from "node:fs/promises";
 import { buildReport, normalizeTransfer, reportCsv } from "./engine.js";
 
+process.stdout.on("error", (error) => {
+  if (error.code === "EPIPE") process.exit(0);
+  throw error;
+});
+
 const path = process.argv[2];
 if (!path) throw new Error("Usage: npm run cli -- evidence/v1-live-raw.json [--csv]");
 const raw = JSON.parse(await readFile(path,"utf8"));

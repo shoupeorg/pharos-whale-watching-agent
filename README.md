@@ -65,6 +65,8 @@ npm run dev
 
 Stage-specific delivery helpers are `scripts/publish.ps1`, `scripts/deploy.ps1`, and `scripts/verify-public.ps1`. `scripts/resume-publish-deploy.ps1` composes those idempotent stages and resolves an existing D1 database by Wrangler JSON rather than human-readable output.
 
+The public repository must exist before `publish.ps1` is run; the helper never creates or changes repository visibility implicitly.
+
 For production, create one D1 database named `pharos-whale-watching-agent`, place its ID in `wrangler.jsonc`, apply migrations with `--remote`, and deploy.
 
 ## CLI
