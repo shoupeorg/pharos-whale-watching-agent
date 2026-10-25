@@ -1,0 +1,9 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+
+test("worker uses conditional scan lock and releases without cursor advance on failure",async()=>{const source=await readFile(new URL("../src/worker.js",import.meta.url),"utf8");assert.match(source,/scan_lock=1 WHERE id=\? AND scan_lock=0/);assert.match(source,/last_error=\?,scan_lock=0 WHERE id=\?/);assert.doesNotMatch(source,/last_error=\?,cursor_block/)});
+test("rate limiting is evaluated before the durable lock is acquired",async()=>{const source=await readFile(new URL("../src/worker.js",import.meta.url),"utf8");assert.ok(source.indexOf("Scan rate limit") < source.indexOf("scan_lock=1 WHERE id=? AND scan_lock=0"))});
+test("configuration changes derive a new report from saved observations",async()=>{const source=await readFile(new URL("../src/worker.js",import.meta.url),"utf8");assert.match(source,/Stored immutable observations were reevaluated/);assert.match(source,/const report = buildReport\(\{ events: observations, config, coverage/);assert.match(source,/tokenSetChanged \? null : row\.cursor_block/)});
+test("D1 schema persists isolated config, cursor, observations and reports",async()=>{const sql=await readFile(new URL("../migrations/0001_initial.sql",import.meta.url),"utf8");for(const field of ["config_json","cursor_block","monitoring","scan_lock","event_id","report_json"])assert.match(sql,new RegExp(field));assert.match(sql,/PRIMARY KEY \(workspace_id, event_id\)/)});
+test("public UI renders untrusted chain and user text with textContent",async()=>{const source=await readFile(new URL("../public/app.js",import.meta.url),"utf8");assert.match(source,/textContent = String\(text\)/);assert.doesNotMatch(source,/innerHTML\s*=/);assert.match(source,/noopener noreferrer/)});

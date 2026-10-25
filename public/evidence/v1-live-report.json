@@ -1,0 +1,287 @@
+{
+  "id": "v1-live-usdc-watch-desk",
+  "engineVersion": "whale-watch/1.0.0",
+  "createdAt": "2026-10-25T14:02:00.000Z",
+  "thresholdRule": "amount >= per-token threshold",
+  "coverage": {
+    "status": "COMPLETE",
+    "requestedFromBlock": 21220650,
+    "requestedToBlock": 21220834,
+    "coveredFromBlock": 21220650,
+    "coveredToBlock": 21220834,
+    "transport": "Official Pharos Chain MCP get_logs and eth_call",
+    "confirmationDelayBlocks": 0,
+    "historicalSavedEvidence": true
+  },
+  "config": {
+    "addresses": [
+      {
+        "address": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+        "label": "Demo desk A",
+        "labelSource": "USER_SUPPLIED"
+      },
+      {
+        "address": "0x936564245b69f5a293b42cbd752e0ee3bb68b470",
+        "label": "Demo desk B",
+        "labelSource": "USER_SUPPLIED"
+      },
+      {
+        "address": "0x946dc10e5d56a3d7619859be53f99d3e4e3c4cef",
+        "label": "Demo desk C",
+        "labelSource": "USER_SUPPLIED"
+      },
+      {
+        "address": "0x4fd44181839d24e7c8f4d1b9288379109ec25fae",
+        "label": "Demo desk D",
+        "labelSource": "USER_SUPPLIED"
+      },
+      {
+        "address": "0x6d5b9f1f4d584f58b745a5c67de3f5f9e0c4f718",
+        "label": "Demo desk E",
+        "labelSource": "USER_SUPPLIED"
+      }
+    ],
+    "tokens": [
+      {
+        "address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+        "symbol": "USDC",
+        "decimals": 6,
+        "threshold": "1",
+        "thresholdRaw": "1000000"
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "1672:0xc8b2d9a45457bba3c668ee445b4d3a150254a30e5cfd1fba9b91e37e0343cb88:1",
+      "chainId": 1672,
+      "transactionHash": "0xc8b2d9a45457bba3c668ee445b4d3a150254a30e5cfd1fba9b91e37e0343cb88",
+      "logIndex": 1,
+      "blockNumber": 21220833,
+      "timestamp": "2026-10-25T13:55:05.000Z",
+      "token": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "symbol": "USDC",
+      "decimals": 6,
+      "amountRaw": "322694760",
+      "amount": "322.69476",
+      "from": "0x936564245b69f5a293b42cbd752e0ee3bb68b470",
+      "to": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+      "removed": false,
+      "direction": "INTERNAL",
+      "evaluation": "SIGNIFICANT",
+      "threshold": "1",
+      "watchedFrom": {
+        "address": "0x936564245b69f5a293b42cbd752e0ee3bb68b470",
+        "label": "Demo desk B",
+        "labelSource": "USER_SUPPLIED"
+      },
+      "watchedTo": {
+        "address": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+        "label": "Demo desk A",
+        "labelSource": "USER_SUPPLIED"
+      },
+      "destinationLabel": "Demo desk A",
+      "destinationLabelSource": "USER_SUPPLIED",
+      "why": "322.69476 USDC is at or above the configured 1 USDC threshold (amount >= threshold).",
+      "explanation": "322.69476 USDC moved between two watched addresses; it counts once as internal movement and does not change net external group flow."
+    },
+    {
+      "id": "1672:0xbcef0b6a158fff145796c4ed8d6201a4c076f7bd946b4e19cc8f16db21203b5e:0",
+      "chainId": 1672,
+      "transactionHash": "0xbcef0b6a158fff145796c4ed8d6201a4c076f7bd946b4e19cc8f16db21203b5e",
+      "logIndex": 0,
+      "blockNumber": 21220736,
+      "timestamp": "2026-10-25T13:53:42.000Z",
+      "token": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "symbol": "USDC",
+      "decimals": 6,
+      "amountRaw": "60595821",
+      "amount": "60.595821",
+      "from": "0xd4c13051dfebba26942392fac219c62b3275a9b2",
+      "to": "0x946dc10e5d56a3d7619859be53f99d3e4e3c4cef",
+      "removed": false,
+      "direction": "EXTERNAL_INFLOW",
+      "evaluation": "SIGNIFICANT",
+      "threshold": "1",
+      "watchedFrom": null,
+      "watchedTo": {
+        "address": "0x946dc10e5d56a3d7619859be53f99d3e4e3c4cef",
+        "label": "Demo desk C",
+        "labelSource": "USER_SUPPLIED"
+      },
+      "destinationLabel": "Demo desk C",
+      "destinationLabelSource": "USER_SUPPLIED",
+      "why": "60.595821 USDC is at or above the configured 1 USDC threshold (amount >= threshold).",
+      "explanation": "60.595821 USDC entered the watched group from an external address."
+    },
+    {
+      "id": "1672:0xa00bd49c9eb0956dbf6c6a1b4543aad2741ef391d8af0019b1485db56f5dd181:4",
+      "chainId": 1672,
+      "transactionHash": "0xa00bd49c9eb0956dbf6c6a1b4543aad2741ef391d8af0019b1485db56f5dd181",
+      "logIndex": 4,
+      "blockNumber": 21220665,
+      "timestamp": "2026-10-25T13:52:40.000Z",
+      "token": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "symbol": "USDC",
+      "decimals": 6,
+      "amountRaw": "3564084",
+      "amount": "3.564084",
+      "from": "0x4fd44181839d24e7c8f4d1b9288379109ec25fae",
+      "to": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+      "removed": false,
+      "direction": "INTERNAL",
+      "evaluation": "SIGNIFICANT",
+      "threshold": "1",
+      "watchedFrom": {
+        "address": "0x4fd44181839d24e7c8f4d1b9288379109ec25fae",
+        "label": "Demo desk D",
+        "labelSource": "USER_SUPPLIED"
+      },
+      "watchedTo": {
+        "address": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+        "label": "Demo desk A",
+        "labelSource": "USER_SUPPLIED"
+      },
+      "destinationLabel": "Demo desk A",
+      "destinationLabelSource": "USER_SUPPLIED",
+      "why": "3.564084 USDC is at or above the configured 1 USDC threshold (amount >= threshold).",
+      "explanation": "3.564084 USDC moved between two watched addresses; it counts once as internal movement and does not change net external group flow."
+    },
+    {
+      "id": "1672:0xa00bd49c9eb0956dbf6c6a1b4543aad2741ef391d8af0019b1485db56f5dd181:2",
+      "chainId": 1672,
+      "transactionHash": "0xa00bd49c9eb0956dbf6c6a1b4543aad2741ef391d8af0019b1485db56f5dd181",
+      "logIndex": 2,
+      "blockNumber": 21220665,
+      "timestamp": "2026-10-25T13:52:40.000Z",
+      "token": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "symbol": "USDC",
+      "decimals": 6,
+      "amountRaw": "3564084",
+      "amount": "3.564084",
+      "from": "0x946dc10e5d56a3d7619859be53f99d3e4e3c4cef",
+      "to": "0x4fd44181839d24e7c8f4d1b9288379109ec25fae",
+      "removed": false,
+      "direction": "INTERNAL",
+      "evaluation": "SIGNIFICANT",
+      "threshold": "1",
+      "watchedFrom": {
+        "address": "0x946dc10e5d56a3d7619859be53f99d3e4e3c4cef",
+        "label": "Demo desk C",
+        "labelSource": "USER_SUPPLIED"
+      },
+      "watchedTo": {
+        "address": "0x4fd44181839d24e7c8f4d1b9288379109ec25fae",
+        "label": "Demo desk D",
+        "labelSource": "USER_SUPPLIED"
+      },
+      "destinationLabel": "Demo desk D",
+      "destinationLabelSource": "USER_SUPPLIED",
+      "why": "3.564084 USDC is at or above the configured 1 USDC threshold (amount >= threshold).",
+      "explanation": "3.564084 USDC moved between two watched addresses; it counts once as internal movement and does not change net external group flow."
+    },
+    {
+      "id": "1672:0xa00bd49c9eb0956dbf6c6a1b4543aad2741ef391d8af0019b1485db56f5dd181:0",
+      "chainId": 1672,
+      "transactionHash": "0xa00bd49c9eb0956dbf6c6a1b4543aad2741ef391d8af0019b1485db56f5dd181",
+      "logIndex": 0,
+      "blockNumber": 21220665,
+      "timestamp": "2026-10-25T13:52:40.000Z",
+      "token": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "symbol": "USDC",
+      "decimals": 6,
+      "amountRaw": "200040",
+      "amount": "0.20004",
+      "from": "0x946dc10e5d56a3d7619859be53f99d3e4e3c4cef",
+      "to": "0x6d5b9f1f4d584f58b745a5c67de3f5f9e0c4f718",
+      "removed": false,
+      "direction": "INTERNAL",
+      "evaluation": "BELOW_THRESHOLD",
+      "threshold": "1",
+      "watchedFrom": {
+        "address": "0x946dc10e5d56a3d7619859be53f99d3e4e3c4cef",
+        "label": "Demo desk C",
+        "labelSource": "USER_SUPPLIED"
+      },
+      "watchedTo": {
+        "address": "0x6d5b9f1f4d584f58b745a5c67de3f5f9e0c4f718",
+        "label": "Demo desk E",
+        "labelSource": "USER_SUPPLIED"
+      },
+      "destinationLabel": "Demo desk E",
+      "destinationLabelSource": "USER_SUPPLIED",
+      "why": "0.20004 USDC is below the configured 1 USDC threshold (amount >= threshold).",
+      "explanation": "0.20004 USDC moved between two watched addresses; it counts once as internal movement and does not change net external group flow."
+    }
+  ],
+  "summary": {
+    "uniqueEvents": 5,
+    "significantEvents": 4,
+    "belowThresholdEvents": 1,
+    "unknownEvaluations": 0,
+    "tokens": {
+      "0xc879c018db60520f4355c26ed1a6d572cdac1815": {
+        "symbol": "USDC",
+        "externalInflowRaw": "60595821",
+        "externalOutflowRaw": "0",
+        "internalRaw": "329822928",
+        "largestRaw": "322694760",
+        "largestEventId": "1672:0xc8b2d9a45457bba3c668ee445b4d3a150254a30e5cfd1fba9b91e37e0343cb88:1",
+        "netExternalRaw": "60595821"
+      }
+    },
+    "perAddress": {
+      "0x912c9ade24d44d8922f0866d8dcb079f1363f647": {
+        "label": "Demo desk A",
+        "inflowRaw": {},
+        "outflowRaw": {},
+        "internalRaw": {
+          "0xc879c018db60520f4355c26ed1a6d572cdac1815": "326258844"
+        },
+        "events": 2
+      },
+      "0x936564245b69f5a293b42cbd752e0ee3bb68b470": {
+        "label": "Demo desk B",
+        "inflowRaw": {},
+        "outflowRaw": {},
+        "internalRaw": {
+          "0xc879c018db60520f4355c26ed1a6d572cdac1815": "322694760"
+        },
+        "events": 1
+      },
+      "0x946dc10e5d56a3d7619859be53f99d3e4e3c4cef": {
+        "label": "Demo desk C",
+        "inflowRaw": {
+          "0xc879c018db60520f4355c26ed1a6d572cdac1815": "60595821"
+        },
+        "outflowRaw": {},
+        "internalRaw": {
+          "0xc879c018db60520f4355c26ed1a6d572cdac1815": "3564084"
+        },
+        "events": 2
+      },
+      "0x4fd44181839d24e7c8f4d1b9288379109ec25fae": {
+        "label": "Demo desk D",
+        "inflowRaw": {},
+        "outflowRaw": {},
+        "internalRaw": {
+          "0xc879c018db60520f4355c26ed1a6d572cdac1815": "7128168"
+        },
+        "events": 2
+      },
+      "0x6d5b9f1f4d584f58b745a5c67de3f5f9e0c4f718": {
+        "label": "Demo desk E",
+        "inflowRaw": {},
+        "outflowRaw": {},
+        "internalRaw": {},
+        "events": 0
+      }
+    }
+  },
+  "limitations": [
+    "ERC-20 Transfer logs only.",
+    "User labels are not protocol verification.",
+    "Incomplete coverage can understate totals.",
+    "Unfinalized head blocks are excluded by the confirmation delay."
+  ]
+}

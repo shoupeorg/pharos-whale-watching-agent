@@ -1,0 +1,6 @@
+node_modules/
+.npm-cache/
+/worker.js
+.wrangler/
+.dev.vars
+screenshots/

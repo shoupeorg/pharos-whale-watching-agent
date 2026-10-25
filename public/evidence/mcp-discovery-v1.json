@@ -1,0 +1,37 @@
+{
+  "capturedAt": "2026-10-25T13:45:00.000Z",
+  "server": "https://mcp.pharos.xyz/mcp",
+  "chainInfo": {
+    "name": "Pharos",
+    "chainId": 1672,
+    "latestBlock": 21220834,
+    "nativeSymbol": "PROS",
+    "clientVersion": "portal/1.0.0",
+    "rpcUrl": "https://rpc.pharos.xyz",
+    "chainIdMatches": true
+  },
+  "usefulTools": {
+    "get_chain_info": {
+      "parameters": {}
+    },
+    "get_block_number": {
+      "parameters": {}
+    },
+    "get_logs": {
+      "parameters": {
+        "address": "string|string[]",
+        "fromBlock": "tag|number",
+        "toBlock": "tag|number",
+        "topics": "(string|string[]|null)[]"
+      },
+      "limit": "1000 blocks inclusive; page larger ranges"
+    },
+    "eth_call": {
+      "parameters": {
+        "transaction": "object",
+        "block": "tag|number optional"
+      }
+    }
+  },
+  "productionDecision": "The Worker uses bounded Pharos JSON-RPC because the hosted app runtime does not embed an interactive agent MCP session. The evidence capture and capability verification use official Chain MCP. Runtime RPC traffic is labeled JSON-RPC, never MCP."
+}

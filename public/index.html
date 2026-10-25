@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Read-only shared watch desk for confirmed Pharos ERC-20 transfers.">
+  <title>Pharos Whale-Watching Agent</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="brand"><img src="/pharos-logo.png" alt="Pharos logo"><div><b>PHAROS</b><span>PACIFIC MAINNET · READ ONLY</span></div></header>
+  <main class="desktop">
+    <section class="window">
+      <div class="titlebar"><span>Pharos Whale-Watching Agent</span><span class="controls">— □ ×</span></div>
+      <div class="menubar">Shared watch desk · confirmed ERC-20 transfers · no wallet · no transactions</div>
+      <div class="hero"><div><p class="kicker">WHAT CHANGED ACROSS MY WATCHLIST?</p><h1>Whale-Watching Agent</h1><p>Track several public addresses in one deduplicated timeline. User labels are context, not verified identity.</p></div><div class="scope">CORE SCOPE<br><b>ERC-20 Transfer logs</b><br>amount ≥ threshold</div></div>
+      <div class="toolbar">
+        <button id="load-example">Load verified example</button>
+        <button id="save-config">Save configuration</button>
+        <button id="scan" class="primary">Run Fresh Scan</button>
+        <button id="start">Start Monitoring</button>
+        <button id="stop" disabled>Stop Monitoring</button>
+        <a id="json-export" class="button-link" href="#">Export JSON</a>
+        <a id="csv-export" class="button-link" href="#">Export CSV</a>
+      </div>
+      <div id="status" class="status" role="status">Loading isolated watch desk…</div>
+      <div class="workspace">
+        <aside class="sidebar">
+          <section class="panel"><h2>Watchlist</h2><p class="hint">Minimum 5. Labels are <b>USER-SUPPLIED</b>.</p><div id="addresses"></div><button id="add-address">Add address</button></section>
+          <section class="panel"><h2>Token thresholds</h2><p class="hint">Exact decimal strings. Unknown decimals block evaluation.</p><div id="tokens"></div><button id="add-token">Add token</button></section>
+          <section class="panel"><h2>Filters</h2><label>Address<select id="filter-address"><option value="">All watched addresses</option></select></label><label>Token<select id="filter-token"><option value="">All tokens</option></select></label><label>Direction<select id="filter-direction"><option value="">All directions</option><option>EXTERNAL_INFLOW</option><option>EXTERNAL_OUTFLOW</option><option>INTERNAL</option><option>MINT</option><option>BURN</option></select></label><label>Significance<select id="filter-significance"><option value="">All evaluations</option><option>SIGNIFICANT</option><option>BELOW_THRESHOLD</option><option>UNKNOWN</option></select></label></section>
+        </aside>
+        <section class="maincol">
+          <section class="panel"><h2>Coverage & freshness</h2><div id="coverage" class="empty">No completed scan yet.</div></section>
+          <section class="cards" id="summary"></section>
+          <section class="panel"><h2>Unified recent activity</h2><p class="hint">Each chain ID + transaction hash + log index appears once. Incomplete coverage can understate totals.</p><div id="timeline" class="empty">No transfer observations loaded.</div></section>
+          <section class="panel"><h2>Per-token group accounting</h2><div id="accounting" class="empty">No significant activity summarized.</div></section>
+          <section class="panel"><h2>Per-address breakdown</h2><div id="wallets" class="empty">No address activity summarized.</div></section>
+          <section class="panel"><h2>Saved real evidence</h2><div class="evidence-actions"><button id="evidence-report">Load verified report</button><button id="evidence-raw">View raw MCP evidence</button><button id="evidence-tools">View MCP discovery</button></div><pre id="evidence">Versioned evidence is separate from live workspace state.</pre></section>
+        </section>
+      </div>
+      <div class="statusbar"><span id="engine">Loading engine…</span><span id="monitor-state">MONITOR STOPPED</span><span>12-block confirmation delay · 500-block batches</span></div>
+    </section>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
